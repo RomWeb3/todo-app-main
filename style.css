@@ -30,6 +30,8 @@ body {
 
 .header {
     background: url(./images/bg-mobile-light.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 20rem;
     padding: 4.5rem 2rem;
 }
