@@ -1,3 +1,5 @@
+import Sortable from './node_modules/sortablejs/modular/sortable.complete.esm.js';
+
 const newTodo = document.getElementById('new-todo');
 const newTodoTxt = document.getElementById('new-todo-txt');
 const addNewTodoBtn = document.getElementById('add-new-todo-btn');
@@ -6,6 +8,17 @@ const todoLeft = document.getElementById('todo-left');
 const clearCompletedBtn = document.getElementById('clear-completed');
 let todos = document.querySelectorAll('.todo');
 
+//Drag & Drop with sortablejs library
+var el = document.getElementById('new-todo');
+var sortable = Sortable.create(el);
+
+new Sortable(el, {
+    animation: 150,
+    ghostClass: 'blue-background-class',
+  });
+
+
+// Get all todo items from Firebase Firestore Database
 function getItems() {
     db.collection('todo-items').onSnapshot((snapshot) => {
         let items = [];
@@ -22,7 +35,7 @@ function getItems() {
 function generateItems(items) {
     let todoItems = [];
     items.forEach(item => {
-        const div = document.createElement('div')
+        const div = document.createElement('li')
         newTodo.appendChild(div);
         div.classList.add('todo');
 
@@ -48,7 +61,7 @@ function generateItems(items) {
                     completed: true
                 })
                 .then(() => {
-                    console.log(`Document successfully updated to true`);
+                    console.log(`Document successfully updated to completed: true`);
                 })
                 .catch((error) => {
                     console.error("Error updating document: ", error);
@@ -61,7 +74,7 @@ function generateItems(items) {
                     completed: false
                 })
                 .then(() => {
-                    console.log("Document successfully updated to false");
+                    console.log("Document successfully updated to completed: false");
                 })
                 .catch((error) => {
                     console.error("Error updating document: ", error);
