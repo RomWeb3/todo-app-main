@@ -9,13 +9,13 @@ const clearCompletedBtn = document.getElementById('clear-completed');
 let todos = document.querySelectorAll('.todo');
 
 //Drag & Drop with sortablejs library
-let el = document.getElementById('new-todo');
-let sortable = Sortable.create(el);
+// let el = document.getElementById('new-todo');
+// let sortable = Sortable.create(el);
 
-new Sortable(el, {
-    animation: 150,
-    ghostClass: 'blue-background-class',
-  });
+// new Sortable(el, {
+//     animation: 150,
+//     ghostClass: 'blue-background-class',
+//   });
 
 
 // Get all todo items from Firebase Firestore Database
