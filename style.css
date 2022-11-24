@@ -7,7 +7,7 @@
     list-style: none;    
     text-decoration: none;
     scroll-behavior: auto !important;
-    /* border: 1px solid white; */
+    /* border: 1px solid black; */
 }
 
 img,
@@ -26,6 +26,8 @@ html {
 
 body {
     font-family: 'Josefin Sans', sans-serif;
+    background-color: hsl(236, 33%, 92%);
+    min-height: 100vh;
 }
 
 .header {
@@ -34,12 +36,15 @@ body {
     background-size: cover;
     height: 20rem;
     padding: 4.5rem 2rem;
+    display: flex;
+    justify-content: center;
 }
 
 .wrap {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    width: 100%;
+    max-width: 54rem;
 }
 
 .wrap img {
@@ -55,14 +60,16 @@ body {
     font-size: 3rem;
 }
 
-main {
-    background-color: grey;
-    min-height: 100vh;
+.wrap-container {
+    display: flex;
+    justify-content: center;
 }
 
 .container {
     padding: 0 2rem;
     margin-top: -9rem;
+    width: 100%;
+    max-width: 58rem;
 }
 
 .new-todo {
@@ -189,12 +196,138 @@ input:focus {
     cursor: pointer;
 }
 
+.filter p:nth-child(1) {
+    color: hsl(220, 98%, 61%);
+}
+
 .filter p:focus {
     color: hsl(220, 98%, 61%);
+}
+
+.filter-desktop {
+    display: none;
 }
 
 .footer {
     text-align: center;
     font-size: 1.35rem;
     color: hsl(236, 9%, 61%);
+    padding-bottom: 5rem;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .header {
+        background: url(./images/bg-desktop-light.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 30rem;
+    }
+
+    .wrap {
+        margin-top: 3.5rem;
+
+    }
+
+    .header h1 {
+        font-size: 4rem;
+        letter-spacing: 1.25rem;
+    }
+
+    .wrap img {
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .container {
+        margin-top: -13rem;
+    }
+
+    .new-todo {
+        height: 6rem;
+        margin-bottom: 2rem;
+        padding: 0 2rem;
+    }
+
+    input {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: hsl(235, 19%, 35%);
+        caret-color: hsl(220, 98%, 61%);
+    }
+
+    .checkbox {
+        height: 2.5rem;
+        width: 2.5rem;
+        margin-right: 1rem;
+    }
+
+    .checkbox:hover {
+        background: linear-gradient(white, white) padding-box,
+        linear-gradient(145deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+        border: 1px solid transparent;
+    }
+
+    .todo {
+        height: 6rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: hsl(235, 19%, 35%);
+        padding: 0 2rem;
+    }
+
+    .todo img {
+        width: 1.75rem;
+        visibility: hidden;
+    }
+
+    .todo:hover img {
+        visibility: visible;
+    }
+
+    .todo-footer {
+        font-size: 1.5rem;
+        padding: 0 2rem;
+    }
+
+    .clear-completed:hover {
+        color: hsl(235, 19%, 35%);
+    }
+
+    .filter {
+        display: none;
+    }
+
+    .filter-desktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        font-size: 1.45rem;
+        color: hsl(236, 9%, 61%);
+        font-weight: 700;
+    }
+
+    .filter-desktop p {
+        cursor: pointer;
+    }
+
+    .filter-desktop p:nth-child(1) {
+        color: hsl(220, 98%, 61%);
+    }
+
+    .filter-desktop p:focus {
+        color: hsl(220, 98%, 61%);
+    }
+
+    .filter-desktop p:hover {
+        color: hsl(235, 19%, 35%);
+    }
+
+    .footer {
+        margin-top: 5.5rem;
+    }
+
 }

@@ -16,7 +16,6 @@
 
 
 <body>
-  <main>
     <div class="header">
       <div class="wrap">
         <h1>Todo</h1>
@@ -24,7 +23,7 @@
       </div>
     </div>
 
-  
+  <div class="wrap-container">
     <div class="container">
       <div class="new-todo">
         <div id="add-new-todo-btn" class="checkbox"></div>
@@ -37,7 +36,14 @@
         <div>
           <span id="todo-left">0 item</span> left
         </div>
-          <div id="clear-completed" class="clear-completed">
+
+        <div class="filter-desktop">
+          <p tabindex="2" id="all-desktop">All</p>
+          <p tabindex="3" id="active-desktop">Active</p> 
+          <p tabindex="4" id="completed-desktop">Completed</p>
+        </div>
+
+        <div id="clear-completed" class="clear-completed">
           Clear Completed
         </div>
       </div>
@@ -52,7 +58,7 @@
       <div class="footer">
         Drag and drop to reorder list
       </div>
-    </main>
+    </div>
   </div>
 
 </body>

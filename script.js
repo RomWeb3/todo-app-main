@@ -170,6 +170,7 @@ const completedTodos = document.getElementById('completed');
 
 
 allTodos.addEventListener('click', () => {
+    allTodos.style.color = 'hsl(220, 98%, 61%)';
     const todos = document.querySelectorAll('.todo');
     todos.forEach((todo) => {
         todo.style.display = 'flex';
@@ -177,6 +178,7 @@ allTodos.addEventListener('click', () => {
 });
 
 activeTodos.addEventListener('click', () => {
+    allTodos.style.color = 'hsl(236, 9%, 61%)';
     const todos = document.querySelectorAll('.todo');
     todos.forEach((todo) => {
         if (todo.classList.contains('completed')) {
@@ -188,6 +190,46 @@ activeTodos.addEventListener('click', () => {
 });
 
 completedTodos.addEventListener('click', () => {
+    allTodos.style.color = 'hsl(236, 9%, 61%)';
+    const todos = document.querySelectorAll('.todo');
+    todos.forEach((todo) => {
+        if (todo.classList.contains('completed')) {
+
+            todo.style.display = 'flex';
+        } else {
+            todo.style.display = 'none';
+        }
+    });
+});
+
+
+const allTodosDesktop = document.getElementById('all-desktop');
+const activeTodosDesktop = document.getElementById('active-desktop');
+const completedTodosDesktop = document.getElementById('completed-desktop');
+
+
+allTodosDesktop.addEventListener('click', () => {
+    allTodosDesktop.style.color = 'hsl(220, 98%, 61%)';
+    const todos = document.querySelectorAll('.todo');
+    todos.forEach((todo) => {
+        todo.style.display = 'flex';
+    });
+});
+
+activeTodosDesktop.addEventListener('click', () => {
+    allTodosDesktop.style.color = 'hsl(236, 9%, 61%)';
+    const todos = document.querySelectorAll('.todo');
+    todos.forEach((todo) => {
+        if (todo.classList.contains('completed')) {
+            todo.style.display = 'none';
+        } else {
+            todo.style.display = 'flex';
+        }
+    });
+});
+
+completedTodosDesktop.addEventListener('click', () => {
+    allTodosDesktop.style.color = 'hsl(236, 9%, 61%)';
     const todos = document.querySelectorAll('.todo');
     todos.forEach((todo) => {
         if (todo.classList.contains('completed')) {
