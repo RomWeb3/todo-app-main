@@ -9,8 +9,8 @@ const clearCompletedBtn = document.getElementById('clear-completed');
 let todos = document.querySelectorAll('.todo');
 
 //Drag & Drop with sortablejs library
-var el = document.getElementById('new-todo');
-var sortable = Sortable.create(el);
+let el = document.getElementById('new-todo');
+let sortable = Sortable.create(el);
 
 new Sortable(el, {
     animation: 150,
@@ -38,6 +38,12 @@ function generateItems(items) {
         const div = document.createElement('li')
         newTodo.appendChild(div);
         div.classList.add('todo');
+        if (header.classList.contains('dark')) {
+            div.classList.add('dark');
+        }
+        toggleDarkMode.addEventListener('click', () => {
+            div.classList.toggle('dark');
+        });
 
         const div2 = document.createElement('div')
         div.appendChild(div2);
@@ -46,6 +52,14 @@ function generateItems(items) {
         const div3 = document.createElement('div')
         div2.appendChild(div3);
         div3.classList.add('checkbox');
+        if (header.classList.contains('dark')) {
+            div3.classList.add('dark');
+        }
+        toggleDarkMode.addEventListener('click', () => {
+            div3.classList.toggle('dark');
+        });
+
+
         let itemActive = 0;
         for (let i = 0; i < items.length; i++) {
             if (items[i].completed === false) {
@@ -240,6 +254,34 @@ completedTodosDesktop.addEventListener('click', () => {
         }
     });
 });
+
+
+//Toggle Light & Dark Mode
+
+const toggleDarkMode = document.getElementById('toggle-dark-mode');
+const body = document.querySelector('body');
+const header = document.querySelector('.header');
+const createNewTodo = document.querySelector('.new-todo');
+const input = document.querySelector('input');
+const checkboxTop = document.querySelector('.checkbox');
+const todoFooter = document.querySelector('.todo-footer');
+const filterDesktop = document.querySelector('.filter-desktop');
+const filter = document.querySelector('.filter');
+
+toggleDarkMode.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    header.classList.toggle('dark');
+    createNewTodo.classList.toggle('dark');
+    input.classList.toggle('dark');
+    checkboxTop.classList.toggle('dark');
+    todoFooter.classList.toggle('dark');
+    filterDesktop.classList.toggle('dark');
+    clearCompletedBtn.classList.toggle('dark');
+    filter.classList.toggle('dark');
+    body.classList.contains('dark') ? toggleDarkMode.src = './images/icon-sun.svg' : toggleDarkMode.src = './images/icon-moon.svg';
+    
+});
+
 
 
 
