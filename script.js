@@ -1,5 +1,3 @@
-import Sortable from "/node_modules/sortablejs/modular/sortable.core.esm.js";
-
 const newTodo = document.getElementById("new-todo");
 const newTodoTxt = document.getElementById("new-todo-txt");
 const addNewTodoBtn = document.getElementById("add-new-todo-btn");
