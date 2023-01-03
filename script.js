@@ -1,4 +1,4 @@
-// import Sortable from './node_modules/sortablejs/modular/sortable.core.esm.js';
+import Sortable from "./node_modules/sortablejs/modular/sortable.core.esm.js";
 
 const newTodo = document.getElementById("new-todo");
 const newTodoTxt = document.getElementById("new-todo-txt");
@@ -8,14 +8,14 @@ const todoLeft = document.getElementById("todo-left");
 const clearCompletedBtn = document.getElementById("clear-completed");
 let todos = document.querySelectorAll(".todo");
 
-//Drag & Drop with sortablejs library
-// let el = document.getElementById('new-todo');
-// let sortable = Sortable.create(el);
+// Drag & Drop with sortablejs library
+let el = document.getElementById("new-todo");
+let sortable = Sortable.create(el);
 
-// new Sortable(el, {
-//     animation: 150,
-//     ghostClass: 'blue-background-class',
-//   });
+new Sortable(el, {
+  animation: 150,
+  ghostClass: "blue-background-class",
+});
 
 // Get all todo items from Firebase Firestore Database
 function getItems() {
