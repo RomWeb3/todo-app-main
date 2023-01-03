@@ -1,65 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
-  <title>Frontend Mentor | Todo app</title>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
-  <script src="./firebase.js"></script>
-  <script src="script.js" type="module"></script>
-</head>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Todo app</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="./firebase.js"></script>
+    <script src="script.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+  </head>
 
-
-<body>
+  <body>
     <div class="header">
       <div class="wrap">
         <h1>Todo</h1>
-        <img id="toggle-dark-mode" src="./images/icon-moon.svg" alt="icon moon">
+        <img
+          id="toggle-dark-mode"
+          src="./images/icon-moon.svg"
+          alt="icon moon"
+        />
       </div>
     </div>
 
-  <div class="wrap-container">
-    <div class="container">
-      <div class="new-todo">
-        <div id="add-new-todo-btn" class="checkbox"></div>
-        <input id="new-todo-txt" type="text" placeholder="Create a new todo...">
-      </div>
-
-      <ul id="new-todo" class="todo-crud"></ul>
-
-      <div class="todo-footer">
-        <div>
-          <span id="todo-left">0 item</span> left
+    <div class="wrap-container">
+      <div class="container">
+        <div class="new-todo">
+          <div id="add-new-todo-btn" class="checkbox"></div>
+          <input
+            id="new-todo-txt"
+            type="text"
+            placeholder="Create a new todo..."
+          />
         </div>
 
-        <div class="filter-desktop">
-          <p tabindex="2" id="all-desktop">All</p>
-          <p tabindex="3" id="active-desktop">Active</p> 
-          <p tabindex="4" id="completed-desktop">Completed</p>
+        <ul id="new-todo" class="todo-crud"></ul>
+
+        <div class="todo-footer">
+          <div><span id="todo-left">0 item</span> left</div>
+
+          <div class="filter-desktop">
+            <p tabindex="2" id="all-desktop">All</p>
+            <p tabindex="3" id="active-desktop">Active</p>
+            <p tabindex="4" id="completed-desktop">Completed</p>
+          </div>
+
+          <div id="clear-completed" class="clear-completed">
+            Clear Completed
+          </div>
         </div>
 
-        <div id="clear-completed" class="clear-completed">
-          Clear Completed
+        <div class="filter">
+          <p tabindex="2" id="all">All</p>
+          <p tabindex="3" id="active">Active</p>
+          <p tabindex="4" id="completed">Completed</p>
         </div>
-      </div>
 
-      <div class="filter">
-        <p tabindex="2" id="all">All</p>
-        <p tabindex="3" id="active">Active</p> 
-        <p tabindex="4" id="completed">Completed</p>
-      </div>
-
-        
-      <div class="footer">
-        Drag and drop to reorder list
+        <div class="footer">Drag and drop to reorder list</div>
       </div>
     </div>
-  </div>
-
-</body>
+  </body>
 </html>
